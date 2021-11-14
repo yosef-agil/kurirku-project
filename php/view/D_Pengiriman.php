@@ -93,12 +93,13 @@
         <div class="userNav">
 
         </div>
-        <h4>Pengiriman hari ini</h4>
+
         <div class="dataMenu">
+            <h4>Pengiriman hari ini</h4>
             <form action="#" method="post">
-                <input type="text" id="theInput" onkeyup="searchFunction()" placeholder="Search here..." title="Type in a name">
+                <input type="text" name="" id="theInput" onkeyup="searchFunction()" placeholder="Search here..." title="Type in a name">
+                <input type="submit" value="Search" class="srch">
             </form>
-            <a href="#" class="btn-add">Add data</a>
         </div>
         <div class="listData">
             <table>
