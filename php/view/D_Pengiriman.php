@@ -55,8 +55,14 @@
         .topHead{
             color:#959797;
         }
+        .listData{
+            margin-top:25px;
+        }
         .data-table{
-            
+            background-color: #E9F3FA;
+        }
+        td{
+            padding: 8px;
         }
     </style>
 </head>
