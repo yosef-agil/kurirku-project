@@ -47,7 +47,8 @@
         display: block;
         }
         main{
-            margin-left:200px;
+            margin-left:215px;
+            margin-right: 15px;
         }
         main table{
             width: 100%;
@@ -63,6 +64,15 @@
         }
         td{
             padding: 8px;
+        }
+        .action-btn{
+            padding: 5px 25px;
+            background-color: #33ADFF;
+            color: #ffff;
+            border-radius: 6px;
+        }
+        a{
+            text-decoration: none;
         }
     </style>
 </head>
