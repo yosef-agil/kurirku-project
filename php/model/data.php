@@ -5,6 +5,7 @@
 
         //class attribut
         public $host="127.0.0.1";
+        //ganti db_jasakurir
         public $dbname="db_jasakurir";
         public $username="root";
         public $password="";
@@ -23,7 +24,7 @@
 
         //Method Tampil Table
         public function tampil_table(){
-            //ganti namatable dengan nama asli di db
+            //ganti pengiriman dengan nama asli di db
             $query= $this->db->prepare("Select * from pengiriman");
             $query->execute();
             $data=$query->fetchAll();

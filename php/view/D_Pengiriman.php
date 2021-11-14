@@ -113,6 +113,7 @@
                     <td>id pembayaran</td>
                     <td>Action</td>
                 </tr>
+                <!-- ganti 'id_pengiriman' samaain sama nama variable yang ada di db -->
                 <?php
                     foreach ($dataKirim as $key){
                         echo "<tr class='data-table'>
