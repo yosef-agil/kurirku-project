@@ -92,8 +92,8 @@
 
     <main>
         <div class="userNav">
-            <h5><?php echo  $_SESSION["user"]["f_name"]." ".$_SESSION["user"]["l_name"] ?></h5>
-            <p><a href="../connection/logout.php">Logout</a></p>
+            <h3><?php echo  $_SESSION["user"]["f_name"]." ".$_SESSION["user"]["l_name"] ?></h3>
+            <a href="../connection/logout.php">Logout</a>
         </div>
 
         <div class="dataMenu">

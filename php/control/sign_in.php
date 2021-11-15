@@ -60,7 +60,7 @@
 
             <br />
             <input type="submit" name="login" value="Sign In">
-            <a href="sign-up.html">Don't have an account?<span>Create One</span></a
+            <a href="sign_up.php">Don't have an account?<span>Create One</span></a
             >
           </div>
         </form>

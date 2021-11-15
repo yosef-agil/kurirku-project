@@ -24,7 +24,7 @@
         //eksekusi untuk menyimpan ke database
         $saved = $stmt->execute($params);
 
-        if($saved) header("Location: ../view/D_Pengiriman.php");
+        if($saved) header("Location: sign_in.php");
     }
 
 ?>
