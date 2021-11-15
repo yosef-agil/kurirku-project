@@ -63,17 +63,34 @@
         .data-table{
             background-color: #E9F3FA;
         }
-        td{
+        .listData td{
             padding: 8px;
         }
         .action-btn{
-            padding: 5px 25px;
+            padding: 5px 15px;
+            margin-right:5px;
             background-color: #33ADFF;
+            color: #ffff;
+            border-radius: 6px;
+        }
+        .action-btn1{
+            padding: 5px 15px;
+            margin-right:5px;
+            background-color: #50D890;
             color: #ffff;
             border-radius: 6px;
         }
         a{
             text-decoration: none;
+        }
+        .menu form{
+            float: right;
+        }
+        .usr td{
+            float: right;
+        }
+        .usr a{
+            font-size:15px;
         }
     </style>
 </head>
@@ -83,25 +100,34 @@
         <a href="#" class="brand">Kurir.<span>ku</span></a>
         <nav class="nav">
             <a href="#" class="nav-link">Dashboard</a>
-            <a href="#" class="nav-link">Kirim Barang</a>
-            <a href="#" class="nav-link">Cek Tarif</a>
-            <a href="#" class="nav-link">Tracking</a>
+            <a href="#" class="nav-link">Data Penerima</a>
+            <a href="#" class="nav-link">Data Pengirim</a>
             <a href="#" class="nav-link">Report</a>
         </nav>
     </header>
 
     <main>
         <div class="userNav">
-            <h3><?php echo  $_SESSION["user"]["f_name"]." ".$_SESSION["user"]["l_name"] ?></h3>
-            <a href="../connection/logout.php">Logout</a>
+            <table class="usr">
+                <tr>
+                    <td><h3><?php echo  $_SESSION["user"]["f_name"]." ".$_SESSION["user"]["l_name"]." | " ?><a href="../connection/logout.php">Logout</a></h3></td>
+                </tr>
+            </table>
+            <hr />
         </div>
 
         <div class="dataMenu">
-            <h4>Pengiriman hari ini</h4>
-            <form action="#" method="post">
-                <input type="text" name="" id="theInput" onkeyup="searchFunction()" placeholder="Search here..." title="Type in a name">
-                <input type="submit" value="Search" class="srch">
-            </form>
+            <table class="menu">
+                <tr>
+                    <td><h2>Data Pengiriman</h2></td>
+                    <td>
+                        <form action="#" method="post">
+                            <input type="text" name="" id="theInput" onkeyup="searchFunction()" placeholder="Search here..." title="Type in a name">
+                            <input type="submit" value="Search" class="srch">
+                        </form>
+                    </td>
+                </tr>
+            </table>
         </div>
         <div class="listData">
             <table>
@@ -128,7 +154,7 @@
                               <td>".$key['id_penerima']."</td>
                               <td>".$key['id_barang']."</td>
                               <td>".$key['id_pembayaran']."</td>
-                              <td><a href='#' class='action-btn'>Tracking</a></td>";
+                              <td><a href='#' class='action-btn1'>On Process</a><a href='#' class='action-btn'>Edit</a><a href='#' class='action-btn'>Lihat Data</a></td>";
                         $no++;
                     };
                 ?>
