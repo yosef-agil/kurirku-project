@@ -59,7 +59,7 @@
         <input class="lb" type="checkbox" id="cek" name="cek1" value="agree">
         <label for="cek">Agrre <span>Privacy & Policy</span> and <span>Terms & Conditions</span></label><br>
 
-        <input type="submit" class="btn-signUp" name="register" value="Sign Up">
+        <input type="submit" class="btn-signUp" name="register" value="Sign Up" onclick="alert('Selamat Anda Sudah Terdaftar, Silahkan Sign In untuk melanjutkan')">
     </form>
   </body>
 </html>

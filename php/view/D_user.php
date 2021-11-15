@@ -2,7 +2,7 @@
 
     //hubungkan dengan file data.php
     include ("../model/data.php");
-    require_once("../connection/auth.php");
+    require_once("../connection/auth2.php");
 
     //new Object
     $DT= new theData();
@@ -17,7 +17,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css" />
-    <title>Dashboard | Pengiriman</title>
+    <title>Dashboard | User</title>
     <style>
         header {
         height: 100%;
@@ -103,9 +103,9 @@
         <a href="#" class="brand">Kurir.<span>ku</span></a>
         <nav class="nav">
             <a href="#" class="nav-link active">Dashboard</a>
-            <a href="#" class="nav-link">Data Penerima</a>
-            <a href="#" class="nav-link">Data Pengirim</a>
-            <a href="#" class="nav-link">Report</a>
+            <a href="../view/kirim_barang.php" class="nav-link">Kirim Barang</a>
+            <a href="#" class="nav-link">Cek Tarif</a>
+            <a href="#" class="nav-link">Tracking</a>
         </nav>
     </header>
 
@@ -113,7 +113,7 @@
         <div class="userNav">
             <table class="usr">
                 <tr>
-                    <td><h3><?php echo  $_SESSION["user"]["f_name"]." ".$_SESSION["user"]["l_name"]." | " ?><a href="../connection/logout.php">Logout</a></h3></td>
+                    <td><h3><?php echo  $_SESSION["user"]["nama"]." | " ?><a href="../connection/logout2.php">Logout</a></h3></td>
                 </tr>
             </table>
             <hr />
@@ -122,10 +122,10 @@
         <div class="dataMenu">
             <table class="menu">
                 <tr>
-                    <td><h2>Data Pengiriman</h2></td>
+                    <td><h2>Lacak Pengiriman Anda</h2></td>
                     <td>
                         <form action="#" method="post">
-                            <input type="text" name="" id="theInput" onkeyup="searchFunction()" placeholder="Search here..." title="Type in a name">
+                            <input type="text" name="" id="theInput" onkeyup="searchFunction()" placeholder="nomer resi..." title="Type in a name">
                             <input type="submit" value="Search" class="srch">
                         </form>
                     </td>
@@ -134,33 +134,7 @@
         </div>
         <div class="listData">
             <table>
-                <tr class="topHead">
-                    <td>no</td>
-                    <td>no resi</td>
-                    <td>tgl kirim</td>
-                    <td>tgl tiba</td>
-                    <td>pengirim</td>
-                    <td>penerima</td>
-                    <td>id barang</td>
-                    <td>id pembayaran</td>
-                    <td>Action</td>
-                </tr>
-                <!-- ganti 'id_pengiriman' samaain sama nama variable yang ada di db -->
-                <?php
-                    foreach ($dataKirim as $key){
-                        echo "<tr class='data-table'>
-                              <td>".$no."</td>
-                              <td>".$key['id_pengiriman']."</td>
-                              <td>".$key['tanggal_kirim']."</td>
-                              <td>".$key['estimasi_terima']."</td>
-                              <td>".$key['id_pengirim']."</td>
-                              <td>".$key['id_penerima']."</td>
-                              <td>".$key['id_barang']."</td>
-                              <td>".$key['id_pembayaran']."</td>
-                              <td><a href='#' class='action-btn1'>On Process</a><a href='#' class='action-btn'>Edit</a><a href='#' class='action-btn'>Lihat Data</a></td>";
-                        $no++;
-                    };
-                ?>
+
             </table>
         </div>
     </main>
