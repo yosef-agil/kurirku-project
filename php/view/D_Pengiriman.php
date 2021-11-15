@@ -2,6 +2,7 @@
 
     //hubungkan dengan file data.php
     include ("../model/data.php");
+    require_once("../connection/auth.php");
 
     //new Object
     $DT= new theData();
@@ -91,7 +92,8 @@
 
     <main>
         <div class="userNav">
-
+            <h5><?php echo  $_SESSION["user"]["f_name"]." ".$_SESSION["user"]["l_name"] ?></h5>
+            <p><a href="../connection/logout.php">Logout</a></p>
         </div>
 
         <div class="dataMenu">
