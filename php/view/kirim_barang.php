@@ -116,8 +116,29 @@
 
         <div class="kirimForm">
             <h2>Isi data berikut ini</h2>
-            <form action="../mode/dataPengiriman.php">
+            <form action="../model/dataPengiriman.php">
+                <label for="nmb">Nama Barang</label><br>
+                <input type="text" id="nmb" name="nama_barang"><br><br>
 
+                <label for="jmb">Jumlah Barang</label><br>
+                <input type="number" id="jmb" name="jumlah_barang"><br><br>
+
+                <label for="brb">Berat Barang</label><br>
+                <input type="number" id="brb" name="berat_barang" placeholder="eg. 1000 gram"><label>Gram</label><br><br>
+                
+                <label for="ukb">Ukuran Barang</label><br>
+                <input type="ukuran barang" id="ukb" name="ukuran_barang" placeholder="eg. 10 cm"><label>Cm</label><br>
+                <input type="ukuran barang" id="ukb" name="ukuran_barang" placeholder="eg. 15 cm"><label>Cm</label><br><br>
+
+                <label for="jbb">Jenis Barang</label><br>
+                <select name="jenis_barang" id="jbb">
+                    <option value="smartphone">Smartphone</option>
+                    <option value="elektronik">Elektronik</option>
+                    <option value="alat_dapur">Alat dapur</option>
+                    <option value="bahan_masak">Bahan masak</option>
+                </select><br><br>
+
+                <input type="submit" value="Buat Pesanan">
             </form>
         </div>
     </main>

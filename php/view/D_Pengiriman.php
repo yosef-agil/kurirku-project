@@ -150,14 +150,14 @@
                     foreach ($dataKirim as $key){
                         echo "<tr class='data-table'>
                               <td>".$no."</td>
-                              <td>".$key['id_pengiriman']."</td>
+                              <td>".$key['id_pengirim']."</td>
                               <td>".$key['tanggal_kirim']."</td>
                               <td>".$key['estimasi_terima']."</td>
                               <td>".$key['id_pengirim']."</td>
                               <td>".$key['id_penerima']."</td>
                               <td>".$key['id_barang']."</td>
                               <td>".$key['id_pembayaran']."</td>
-                              <td><a href='#' class='action-btn1'>On Process</a><a href='#' class='action-btn'>Edit</a><a href='#' class='action-btn'>Lihat Data</a></td>";
+                              <td><a href='#' class='action-btn1'>On Process</a><a href='#' class='action-btn'>Edit</a><a href='lihat_data.php?".$key['id']."' class='action-btn'>Lihat Data</a></td>";
                         $no++;
                     };
                 ?>

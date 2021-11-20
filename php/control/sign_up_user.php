@@ -39,40 +39,81 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>Sign Up | Kurir.ku</title>
+
+    <style>
+      body{
+        background-color:#E9F3FA;
+      }
+      .sign-up-user{
+        background-color:#fff;
+        padding:18px;
+        border-radius:15px;
+        box-shadow: 1px 5px 22px 0px rgba(58, 63, 78, 0);
+      }
+    </style>
   </head>
   <body>
-    <h2>Sign Up</h2>
-    <form action="" method="post">
 
-        <label class="lb" for="nama">Nama Lengkap</label><br>
-        <input type="text" name="nama" id="nama" placeholder="Nama anda..."><br>
+      <div class="container">
+        <div class="row">
+          <div class="col-4 position-absolute top-50 start-50 translate-middle">
+            <div class="sign-up-user">
+              <form action="" class="user row g-3" method="post">
+              <h4>Sign Up - Customer</h4>
 
-        <label class="lb" for="alamat">Alamat</label><br>
-        <input type="text" name="alamat" id="alamat" placeholder="Alamat lengkap..."><br>
+              <div class="col-md-12">
+                <label for="formGroupExampleInput" class="form-label">Nama Lengkap</label>
+                <input type="text" class="form-control" name="nama" id="formGroupExampleInput" placeholder="Your email address..">
+              </div>
+              <div class="col-md-6">
+                <label for="formGroupExampleInput" class="form-label">Alamat</label>
+                <input type="text" class="form-control" name="alamat" id="formGroupExampleInput" placeholder="Your email address..">
+              </div>
+              <div class="col-md-6">
+                <label for="formGroupExampleInput" class="form-label">Kode Post</label>
+                <input type="text" class="form-control" name="kode" id="formGroupExampleInput" placeholder="Your email address..">
+              </div>
+              <div class="col-md-6">
+                <label for="formGroupExampleInput" class="form-label">No Telepon</label>
+                <input type="number" class="form-control" name="nomer" id="formGroupExampleInput" placeholder="Your email address..">
+              </div>
+              <div class="col-md-6">
+                <label for="formGroupExampleInput" class="form-label">Email</label>
+                <input type="email" class="form-control" name="email" id="formGroupExampleInput" placeholder="Your email address..">
+              </div>
+              <div class="col-md-6">
+                <label for="formGroupExampleInput" class="form-label">Passoword</label>
+                <input type="password" class="form-control" name="passUsr" id="formGroupExampleInput" placeholder="Your email address..">
+              </div>
+              <div class="col-md-6">
+                <label for="formGroupExampleInput2" class="form-label">Confirmation Password</label>
+                <input type="password" class="form-control" name="passUsrConf" id="formGroupExampleInput2" placeholder="Input your password..">
+              </div>
 
-        <label class="lb" for="kode">Kode Post</label><br>
-        <input type="text" name="kode" id="kode" placeholder="Kode post anda..."><br>
-        
-        <label class="lb" for="noTlpn">No Telepon</label><br>
-        <input type="number" name="nomer" id="noTlpn" placeholder="Nomer ponsel..."><br>
+              <div class="col-md-12">
+                <br>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Agrre <span>Privacy & Policy</span> and <span>Terms & Conditions</span>
+                    </label>
+                  </div><br>
 
-        <label class="lb" for="email">Email</label><br>
-        <input type="email" name="email" id="email" placeholder="Email anda..."><br>
+                  <input type="submit" class="btn btn-primary" name="register" value="Sign Up" style="width:100%;"><br><br>
 
-        <label class="lb" for="pass">Password</label><br>
-        <input type="password" name="passUsr" id="pass" placeholder="Input your password..."><br>
-        
-        <label class="lb" for="passConf">Confirmation Password</label><br>
-        <input type="password" name="passUsrConf" id="passConf" placeholder="Confirmation your password..."><br><br>
-        
-        <input class="lb" type="checkbox" id="cek" name="cek1" value="agree">
-        <label for="cek">Agrre <span>Privacy & Policy</span> and <span>Terms & Conditions</span></label><br>
+                  <p style="text-align:center;">Don't have an account? <span><a href="sign_in_user.php" style="text-decoration:none; color:blue;">Sign In</a></span></p>
+              </div>
 
-        <input type="submit" class="btn-signUp" name="register" value="Daftar">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
 
-        <br>
-        <a href="sign_in_user.php">Already have an account? Sign In</span></a>
-    </form>
+    <!-- Javascript Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
   </body>
 </html>
