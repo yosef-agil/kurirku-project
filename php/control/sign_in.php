@@ -66,6 +66,7 @@
             <div class="log-admin">
               <form action="" class="user" method="post">
               <h3 style="text-align:center;">Log In - Admin</h3><br>
+              <hr>
               <div class="col-md-12">
                 <label for="formGroupExampleInput" class="form-label">Email</label>
                 <input type="text" class="form-control" name="email" id="formGroupExampleInput" placeholder="Your email address..">

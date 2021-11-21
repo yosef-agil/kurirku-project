@@ -12,7 +12,7 @@
         $passUsr = password_hash($_POST["passUsr"], PASSWORD_DEFAULT);
 
         //menyiapkan querry
-        $sql = "INSERT INTO tb_signUp_usr (nama, alamat, kode, nomer, email, passUsr)
+        $sql = "INSERT INTO tb_user (nama, alamat, kode, nomer, email, passUsr)
                 VALUES (:nama, :alamat, :kode, :nomer, :email, :passUsr)";
         $stmt = $db->prepare($sql);
 
@@ -43,14 +43,21 @@
     <title>Sign Up | Kurir.ku</title>
 
     <style>
+      *{
+        margin:0;
+        padding:0;
+      }
       body{
         background-color:#E9F3FA;
       }
       .sign-up-user{
         background-color:#fff;
-        padding:18px;
+        padding:25px;
         border-radius:15px;
         box-shadow: 1px 5px 22px 0px rgba(58, 63, 78, 0);
+      }
+      label{
+        font-size:14px;
       }
     </style>
   </head>
@@ -61,35 +68,34 @@
           <div class="col-4 position-absolute top-50 start-50 translate-middle">
             <div class="sign-up-user">
               <form action="" class="user row g-3" method="post">
-              <h4>Sign Up - Customer</h4>
-
+              <h3 style="text-align:center;">Sign Up - Customer</h3>
               <div class="col-md-12">
                 <label for="formGroupExampleInput" class="form-label">Nama Lengkap</label>
-                <input type="text" class="form-control" name="nama" id="formGroupExampleInput" placeholder="Your email address..">
+                <input type="text" class="form-control form-control-sm" name="nama" id="formGroupExampleInput" placeholder="nama lengkap anda..">
               </div>
-              <div class="col-md-6">
+              <div class="col-md-8">
                 <label for="formGroupExampleInput" class="form-label">Alamat</label>
-                <input type="text" class="form-control" name="alamat" id="formGroupExampleInput" placeholder="Your email address..">
+                <input type="text" class="form-control form-control-sm" name="alamat" id="formGroupExampleInput" placeholder="Alamat..">
+              </div>
+              <div class="col-md-4">
+                <label for="formGroupExampleInput" class="form-label">Kode Pos</label>
+                <input type="text" class="form-control form-control-sm" name="kode" id="formGroupExampleInput" placeholder="Kode pos..">
               </div>
               <div class="col-md-6">
-                <label for="formGroupExampleInput" class="form-label">Kode Post</label>
-                <input type="text" class="form-control" name="kode" id="formGroupExampleInput" placeholder="Your email address..">
-              </div>
-              <div class="col-md-6">
-                <label for="formGroupExampleInput" class="form-label">No Telepon</label>
-                <input type="number" class="form-control" name="nomer" id="formGroupExampleInput" placeholder="Your email address..">
+                <label for="formGroupExampleInput" class="form-label">No. Ponsel</label>
+                <input type="number" class="form-control form-control-sm" name="nomer" id="formGroupExampleInput" placeholder="No. Ponsel anda">
               </div>
               <div class="col-md-6">
                 <label for="formGroupExampleInput" class="form-label">Email</label>
-                <input type="email" class="form-control" name="email" id="formGroupExampleInput" placeholder="Your email address..">
+                <input type="email" class="form-control form-control-sm" name="email" id="formGroupExampleInput" placeholder="Email anda..">
               </div>
               <div class="col-md-6">
-                <label for="formGroupExampleInput" class="form-label">Passoword</label>
-                <input type="password" class="form-control" name="passUsr" id="formGroupExampleInput" placeholder="Your email address..">
+                <label for="formGroupExampleInput" class="form-label">Password</label>
+                <input type="password" class="form-control form-control-sm" name="passUsr" id="formGroupExampleInput" placeholder="password..">
               </div>
               <div class="col-md-6">
                 <label for="formGroupExampleInput2" class="form-label">Confirmation Password</label>
-                <input type="password" class="form-control" name="passUsrConf" id="formGroupExampleInput2" placeholder="Input your password..">
+                <input type="password" class="form-control form-control-sm" name="passUsrConf" id="formGroupExampleInput2" placeholder="konfirmasi..">
               </div>
 
               <div class="col-md-12">

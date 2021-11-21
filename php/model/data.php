@@ -32,6 +32,40 @@
             return $this->dataPengiriman;
         }
 
+        //method insert kirim barang
+        public function kirim_barang($a, $b, $c, $d, $e){
+            $query=$this->db->prepare("INSERT INTO tb_barang(nama_barang, jumlah_barang, berat_barang, ukuran_barang, jenis_barang) 
+                                       VALUES(:namaBarang, :jumlahBarang, :jenisBarang, :beratBarang, :ukuranBarang)");
+            
+            //menginsialisasi
+            $query->bindParam(":namaBarang",$a);
+            $query->bindParam(":jumlahBarang",$b);
+            $query->bindParam(":beratBarang",$c);
+            $query->bindParam(":ukuranBarang",$d);
+            $query->bindParam(":jenisBarang",$e);
+
+            //kondisi
+            if($query->execute()) return true;
+            else return false;
+        }
+
+        //method insert dataPenerima
+        public function data_penerima($a, $b, $c, $d, $e){
+            $query=$this->db->prepare("INSERT INTO tb_penerima(nama, alamat, no_telepon, kode_post, kota)
+                                       VALUE(:pn, :al, :np, :kp, :kc)");
+            
+            //inisialisasi
+            $query->bindParam(":pn", $a);
+            $query->bindParam(":al", $b);
+            $query->bindParam(":np", $c);
+            $query->bindParam(":kp", $d);
+            $query->bindParam(":kc", $e);
+
+            //kondisi
+            if($query->execute()) return true;
+            else return false;
+        }
+
     }
 
 

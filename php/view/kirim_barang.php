@@ -17,6 +17,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+        *{
+            margin:0;
+            padding:0;
+        }
         body {
             background-color: #eee;
             font-family: 'Inter', sans-serif;
@@ -56,7 +60,7 @@
                 <ul class="nav nav-pills flex-column mb-auto">
                     <li> <a href="D_user.php" class="nav-link text-white">Dashboard</a> </li>
                     <li  class="nav-item"> <a href="kirim_barang.php" class="nav-link active"  aria-current="page">Kirim Barang</a> </li>
-                    <li> <a href="cekTar.php" class="nav-link text-white">Cek Tarif</a> </li>
+                    <li> <a href="cekTarif.php" class="nav-link text-white">Cek Tarif</a> </li>
                     <li> <a href="tracking.php" class="nav-link text-white">Tracking</a> </li>
                 </ul>
                 <hr>
@@ -90,24 +94,24 @@
                         Lengkapi formulir ini untuk melakukan pengiriman barang
                     </p>
                     <br>
-                    <form action="../model/dataPengiriman.php" class="kirim row g-3">
+                    <form action="../control/barang_controller.php" class="kirim row g-3" method="post">
                         <div class="col-md-12">
                             <label for="formGroupExampleInput" class="form-label">Nama barang</label>
                             <input type="text" class="form-control form-control-sm" name="namaBarang" id="formGroupExampleInput" placeholder="eg. iphone..">
                         </div>
                         <div class="col-md-12">
                             <label for="formGroupExampleInput" class="form-label">Jumlah barang</label>
-                            <input type="number" class="form-control form-control-sm" name="namaJumlah" id="formGroupExampleInput" placeholder="eg. 1..">
+                            <input type="number" class="form-control form-control-sm" name="jumlahBarang" id="formGroupExampleInput" placeholder="eg. 1..">
                         </div>
                         <div class="col-md-12">
                             <label for="formGroupExampleInput" class="form-label">Jenis barang</label>
                             <select class="form-select form-select-sm" aria-label="Default select example" name="jenisBarang" id="formGroupExampleInput">
                                 <option selected>Elektronik</option>
-                                <option value="1">Handphone & aksesories</option>
-                                <option value="2">Mainan & Hiburan</option>
-                                <option value="3">Makanan</option>
-                                <option value="3">Peralatan Dapur</option>
-                                <option value="3">Dekorasi rumah</option>
+                                <option value="Handphone & aksesories">Handphone & aksesories</option>
+                                <option value="Mainan & Hiburan">Mainan & Hiburan</option>
+                                <option value="Makanan">Makanan</option>
+                                <option value="Peralatan Dapur">Peralatan Dapur</option>
+                                <option value="Dekorasi Rumah">Dekorasi rumah</option>
                             </select>
                         </div>
                         <div class="col-md-6">

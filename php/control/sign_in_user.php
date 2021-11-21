@@ -6,7 +6,7 @@
         $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
         $passUsr = filter_input(INPUT_POST, 'passUsr', FILTER_SANITIZE_STRING);
 
-        $sql = "SELECT * FROM tb_signUp_usr WHERE email=:email";
+        $sql = "SELECT * FROM tb_user WHERE email=:email";
         $stmt = $db->prepare($sql);
 
         //bind parameter ke query

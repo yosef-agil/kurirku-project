@@ -56,9 +56,9 @@
                 Kurir<span class="fs-4" style="color:#75CB79;">.ku</span> </a>
                 <hr>
                 <ul class="nav nav-pills flex-column mb-auto">
-                    <li class="nav-item"> <a href="D_user.php" class="nav-link active">Dashboard</a> </li>
-                    <li> <a href="kirim_barang.php" class="nav-link text-white"  aria-current="page">Kirim Barang</a> </li>
-                    <li> <a href="cekTarif.php" class="nav-link text-white">Cek Tarif</a> </li>
+                    <li> <a href="D_user.php" class="nav-link text-white">Dashboard</a> </li>
+                    <li> <a href="kirim_barang.php" class="nav-link text-white" >Kirim Barang</a> </li>
+                    <li class="nav-item"> <a href="cekTarif.php" class="nav-link active"  aria-current="page">Cek Tarif</a> </li>
                     <li> <a href="tracking.php" class="nav-link text-white">Tracking</a> </li>
                 </ul>
                 <hr>
@@ -86,13 +86,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h4>Data Pengiriman Anda</h4>
-                </div>
-                <div class="col-md-6">
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
+                    <h4>Cek Ongkos Kirim</h4>
                 </div>
                 <hr style="margin-top:25px;">
             </div>
