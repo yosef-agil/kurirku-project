@@ -77,7 +77,7 @@
               <br>
               <input type="submit" class="btn btn-primary" name="login" style="width:100%;" value="Sign In"><br><br>
 
-              <p>Don't have an account? <span><a href="sign_up_user.php" style="text-decoration:none; color:blue;">Sign Up</a></span></p>
+              <p style="text-align:center;">Don't have an account? <span><a href="sign_up_user.php" style="text-decoration:none; color:blue;">Sign Up</a></span></p>
               </form>
             </div>
           </div>

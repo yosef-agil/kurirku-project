@@ -11,136 +11,128 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css" />
     <title>Dashboard | User</title>
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <style>
-        header {
-        height: 100%;
-        width: 200px;
-        position: fixed;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        background-color: #111;
-        overflow-x: hidden;
-        padding-top: 20px;
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+        body {
+            background-color: #eee;
+            font-family: 'Inter', sans-serif;
         }
-        header a{
-        padding: 6px 6px 45px 32px;
-        text-decoration: none;
-        font-size: 25px;
-        color: #ffffff;
-        display: block;
-        }
-        header a span{
-            color:#75CB79;
-        }
-        nav a {
-        padding: 6px 6px 6px 32px;
-        text-decoration: none;
-        font-size: 18px;
-        color: #818181;
-        display: block;
+        header{
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            overflow-x: hidden;
         }
         main{
-            margin-left:215px;
-            margin-right: 15px;
+            margin-left: 280px;
+            padding:60px 40px;
         }
-        main table{
-            width: 100%;
+        .nav-link:hover {
+            background-color: #525252 !important
         }
-        .topHead{
-            color:#959797;
+
+        .nav-link .fa {
+            transition: all 1s
         }
-        .listData{
-            margin-top:25px;
-        }
-        .data-table{
-            background-color: #E9F3FA;
-        }
-        .listData td{
-            padding: 8px;
-        }
-        .action-btn{
-            padding: 5px 15px;
-            margin-right:5px;
-            background-color: #33ADFF;
-            color: #ffff;
-            border-radius: 6px;
-        }
-        .action-btn1{
-            padding: 5px 15px;
-            margin-right:5px;
-            background-color: #50D890;
-            color: #ffff;
-            border-radius: 6px;
-        }
-        a{
-            text-decoration: none;
-        }
-        .menu form{
-            float: right;
-        }
-        .usr td{
-            float: right;
-        }
-        .usr a{
-            font-size:15px;
-        }
-        .active{
-            color:#ffff;
+
+        .nav-link:hover .fa {
+            transform: rotate(360deg)
         }
     </style>
 </head>
 <body>
-    
     <header>
-        <a href="#" class="brand">Kurir.<span>ku</span></a>
-        <nav class="nav">
-            <a href="../view/D_user.php" class="nav-link">Dashboard</a>
-            <a href="../view/kirim_barang.php" class="nav-link active">Kirim Barang</a>
-            <a href="#" class="nav-link">Cek Tarif</a>
-            <a href="#" class="nav-link">Tracking</a>
-        </nav>
+        <div class="sidebar-menu">
+            <!-- side bar menu -->
+            <div class="d-flex flex-column vh-100 flex-shrink-0 p-3 text-white bg-dark" style="width: 250px;"> 
+            <a href="/" style="margin-left:16px;"  class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none fs-4"> 
+                Kurir<span class="fs-4" style="color:#75CB79;">.ku</span> </a>
+                <hr>
+                <ul class="nav nav-pills flex-column mb-auto">
+                    <li> <a href="D_user.php" class="nav-link text-white">Dashboard</a> </li>
+                    <li  class="nav-item"> <a href="kirim_barang.php" class="nav-link active"  aria-current="page">Kirim Barang</a> </li>
+                    <li> <a href="cekTar.php" class="nav-link text-white">Cek Tarif</a> </li>
+                    <li> <a href="tracking.php" class="nav-link text-white">Tracking</a> </li>
+                </ul>
+                <hr>
+                <div class="dropdown">
+                    
+                    <a style="font-size:14px;" href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false"> 
+                        <img src="https://simg.nicepng.com/png/small/128-1280406_view-user-icon-png-user-circle-icon-png.png" alt="" width="28" height="28" class="rounded-circle me-2"> 
+                        <?php echo  $_SESSION["user"]["nama"]; ?>
+                    </a>
+
+                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="../connection/logout2.php">Sign out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </header>
 
     <main>
-        <div class="userNav">
-            <table class="usr">
-                <tr>
-                    <td><h3><?php echo  $_SESSION["user"]["nama"]." | " ?><a href="../connection/logout2.php">Logout</a></h3></td>
-                </tr>
-            </table>
-            <hr />
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <div class="kirimForm">
+                    <h4>Isi formulir berikut ini</h4>
+                    <p>
+                        Lengkapi formulir ini untuk melakukan pengiriman barang
+                    </p>
+                    <br>
+                    <form action="../model/dataPengiriman.php" class="kirim row g-3">
+                        <div class="col-md-12">
+                            <label for="formGroupExampleInput" class="form-label">Nama barang</label>
+                            <input type="text" class="form-control form-control-sm" name="namaBarang" id="formGroupExampleInput" placeholder="eg. iphone..">
+                        </div>
+                        <div class="col-md-12">
+                            <label for="formGroupExampleInput" class="form-label">Jumlah barang</label>
+                            <input type="number" class="form-control form-control-sm" name="namaJumlah" id="formGroupExampleInput" placeholder="eg. 1..">
+                        </div>
+                        <div class="col-md-12">
+                            <label for="formGroupExampleInput" class="form-label">Jenis barang</label>
+                            <select class="form-select form-select-sm" aria-label="Default select example" name="jenisBarang" id="formGroupExampleInput">
+                                <option selected>Elektronik</option>
+                                <option value="1">Handphone & aksesories</option>
+                                <option value="2">Mainan & Hiburan</option>
+                                <option value="3">Makanan</option>
+                                <option value="3">Peralatan Dapur</option>
+                                <option value="3">Dekorasi rumah</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="formGroupExampleInput" class="form-label">Berat barang</label>
+                            <input type="number" class="form-control form-control-sm" name="beratBarang" id="formGroupExampleInput" placeholder="eg. 1000 gram..">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="formGroupExampleInput" class="form-label">Ukuran barang</label>
+                            <input type="number" class="form-control form-control-sm" name="ukuranBarang" id="formGroupExampleInput" placeholder="eg. 10x10cm..">
+                            <br>
+                        </div>
+                        <div class="col-md-12">
+                        <input type="submit" class="btn btn-primary" name="register" value="Selanjutnya" style="width:35%;"><br><br>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-
-        <div class="kirimForm">
-            <h2>Isi data berikut ini</h2>
-            <form action="../model/dataPengiriman.php">
-                <label for="nmb">Nama Barang</label><br>
-                <input type="text" id="nmb" name="nama_barang"><br><br>
-
-                <label for="jmb">Jumlah Barang</label><br>
-                <input type="number" id="jmb" name="jumlah_barang"><br><br>
-
-                <label for="brb">Berat Barang</label><br>
-                <input type="number" id="brb" name="berat_barang" placeholder="eg. 1000 gram"><label>Gram</label><br><br>
-                
-                <label for="ukb">Ukuran Barang</label><br>
-                <input type="ukuran barang" id="ukb" name="ukuran_barang" placeholder="eg. 10 cm"><label>Cm</label><br>
-                <input type="ukuran barang" id="ukb" name="ukuran_barang" placeholder="eg. 15 cm"><label>Cm</label><br><br>
-
-                <label for="jbb">Jenis Barang</label><br>
-                <select name="jenis_barang" id="jbb">
-                    <option value="smartphone">Smartphone</option>
-                    <option value="elektronik">Elektronik</option>
-                    <option value="alat_dapur">Alat dapur</option>
-                    <option value="bahan_masak">Bahan masak</option>
-                </select><br><br>
-
-                <input type="submit" value="Buat Pesanan">
-            </form>
-        </div>
+    </div>
     </main>
+    
+
+    <!-- Javascript Bootstrap -->
+    <script src="../js/sidebar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 </body>
 </html>
