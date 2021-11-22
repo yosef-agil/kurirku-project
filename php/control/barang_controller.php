@@ -9,9 +9,9 @@
     $barang= $dt->kirim_barang(
                     $_POST["namaBarang"], 
                     $_POST["jumlahBarang"], 
+                    $_POST["jenisBarang"], 
                     $_POST["beratBarang"], 
-                    $_POST["ukuranBarang"], 
-                    $_POST["jenisBarang"]);
+                    $_POST["ukuranBarang"]);
 
     if($barang==true){
         header("Location: ../view/dataPenerima.php");

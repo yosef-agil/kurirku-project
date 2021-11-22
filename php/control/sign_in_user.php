@@ -48,6 +48,7 @@
       }
       .log-user{
         background-color:#fff;
+        margin:50px 25px;
         padding:40px;
         border-radius:15px;
         box-shadow: 1px 5px 22px 0px rgba(58, 63, 78, 0);
@@ -65,7 +66,8 @@
           <div class="col-4 position-absolute top-50 start-50 translate-middle">
             <div class="log-user">
               <form action="" class="user" method="post">
-              <h2>Log In - Customer</h2><br>
+              <h3 style="text-align:center; margin: 0 0 25px 0;">Log In - Customer</h3>
+              <hr>
               <div class="col-md-12">
                 <label for="formGroupExampleInput" class="form-label">Email</label>
                 <input type="text" class="form-control" name="email" id="formGroupExampleInput" placeholder="Your email address..">

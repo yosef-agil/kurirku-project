@@ -34,15 +34,15 @@
 
         //method insert kirim barang
         public function kirim_barang($a, $b, $c, $d, $e){
-            $query=$this->db->prepare("INSERT INTO tb_barang(nama_barang, jumlah_barang, berat_barang, ukuran_barang, jenis_barang) 
+            $query=$this->db->prepare("INSERT INTO tb_barang(nama_barang, jumlah_barang, jenis_barang, berat_barang, ukuran_barang) 
                                        VALUES(:namaBarang, :jumlahBarang, :jenisBarang, :beratBarang, :ukuranBarang)");
             
             //menginsialisasi
             $query->bindParam(":namaBarang",$a);
             $query->bindParam(":jumlahBarang",$b);
-            $query->bindParam(":beratBarang",$c);
-            $query->bindParam(":ukuranBarang",$d);
-            $query->bindParam(":jenisBarang",$e);
+            $query->bindParam(":jenisBarang",$c);
+            $query->bindParam(":beratBarang",$d);
+            $query->bindParam(":ukuranBarang",$e);
 
             //kondisi
             if($query->execute()) return true;
@@ -66,6 +66,8 @@
             else return false;
         }
 
+        //method menghitung total depends berat barang
+        
     }
 
 

@@ -89,56 +89,34 @@
         <div class="row">
             <div class="col-6">
                 <div class="kirimForm">
-                    <h4>Isi formulir berikut ini</h4>
+                    <h4>Pilih Metode Pembayaran</h4>
                     <p>
-                        Lengkapi formulir ini untuk melakukan pengiriman barang
+                        lakukan pembayaran untuk menyelesaikan pemesanan jasa
                     </p>
                     <br>
-                    <form action="../control/barang_controller.php" class="kirim row g-3" method="post">
+                    <form action="../control/pembayaran_success_controller.php" class="kirim row g-3" method="post">
+
                         <div class="col-md-12">
-                            <label for="formGroupExampleInput" class="form-label">Nama barang</label>
-                            <input type="text" class="form-control form-control-sm" name="namaBarang" id="formGroupExampleInput" placeholder="eg. iphone..">
-                        </div>
-                        <div class="col-md-12">
-                            <label for="formGroupExampleInput" class="form-label">Jumlah barang</label>
-                            <input type="number" class="form-control form-control-sm" name="jumlahBarang" id="formGroupExampleInput" placeholder="eg. 1..">
-                        </div>
-                        <div class="col-md-12">
-                            <label for="formGroupExampleInput" class="form-label">Jenis barang</label>
+                            <label for="formGroupExampleInput" class="form-label">Metode Pembayaran</label>
                             <select class="form-select form-select-sm" aria-label="Default select example" name="jenisBarang" id="formGroupExampleInput">
-                                <option value="Elektronik">Elektronik</option>
-                                <option value="Handphone & aksesories">Handphone & aksesories</option>
-                                <option value="Dekorasi Rumah">Dokumen</option>
-                                <option value="Mainan & Hiburan">Mainan & Hiburan</option>
-                                <option value="Makanan">Makanan</option>
-                                <option value="Peralatan Dapur">Peralatan Dapur</option>
-                                <option value="Dekorasi Rumah">Dekorasi rumah</option>
+                                <option selected>Pilih metode pembayaran</option>
+                                <option value="OVO">OVO</option>
+                                <option value="Gopay">Gopay</option>
+                                <option value="Dana">Dana</option>
+                                <option value="Transfer Bank">Transfer Bank</option>
+                                <option value="COD di tempat">COD di tempat</option>
                             </select>
                         </div>
-                        <div class="col-md-6">
-                            <label for="formGroupExampleInput" class="form-label">Berat barang</label>
-                            <select class="form-select form-select-sm" aria-label="Default select example" name="beratBarang" id="formGroupExampleInput">  
-                                <option value="1000">100-1000gram</option>
-                                <option value="2500">1000-2500gram</option>
-                                <option value="5000">2500-5000gram</option>
-                                <option value="10000">5000-10000gram</option>
-                                <option value="15000">10000-15000gram</option>
-                                <option value="20000">15000-20000gram</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6">
-                            <label for="formGroupExampleInput" class="form-label">Ukuran barang</label>
-                            <select class="form-select form-select-sm" aria-label="Default select example" name="ukuranBarang" id="formGroupExampleInput">  
-                                <option value="Kecil">Kecil</option>
-                                <option value="Sedang">Sedang</option>
-                                <option value="Besar">Besar</option>
-                            </select>
-                            <br>
-                        </div>
+
                         <div class="col-md-12">
                         <input type="submit" class="btn btn-primary" name="register" value="Selanjutnya" style="width:35%;"><br><br>
                         </div>
                     </form>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="perincian">
+
                 </div>
             </div>
         </div>
