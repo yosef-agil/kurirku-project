@@ -26,7 +26,7 @@
                 $_SESSION["user"] = $user;
 
                 //login sukses, alihkan ke halaman home
-                header("Location: ../view/D_Pengiriman.php");
+                header("Location: ../view/D_admin.php");
             }
         }
     }

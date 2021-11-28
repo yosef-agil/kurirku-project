@@ -5,7 +5,7 @@
 
         //class attribut
         public $host="127.0.0.1";
-        //ganti db_jasakurir
+        //nama database
         public $dbname="db_jasakurir";
         public $username="root";
         public $password="";
@@ -67,7 +67,46 @@
         }
 
         //method menghitung total depends berat barang
-        
+        public function ongkir($a){
+            $query=$this->db->prepare("SELECT * FROM 'tb_barang' WHERE berat_barang=:beratBarang");
+
+            $query->bindParam(":beratBarang", $a);
+        }
+
+
+        //Method tampil data penerima
+        public function tampil_penerima()
+        {
+            $query = $this->db->prepare("Select * from tb_penerima");
+            $query->execute();
+            $data = $query->fetchAll();
+            $this->dataPenerima = $data;
+            return $this->dataPenerima;
+        }
+
+        //Method tampil data pengirim
+        public function tampil_pengirim()
+        {
+            $query = $this->db->prepare("Select * from tb_user");
+            $query->execute();
+            $data = $query->fetchAll();
+            $this->dataPengirim = $data;
+            return $this->dataPengirim;
+        }
+
+        //Method hapus data penerima
+        public function delete_penerima($id_penerima){
+            $query=$this->db->prepare("DELETE FROM tb_penerima WHERE id_penerima = '$id_penerima'");
+            $query->execute();
+
+            if($query->execute()) return true;
+            else return false;
+        }
+
+        //Method hapus data pengirim
+
+
+        //Method Report
     }
 
 
