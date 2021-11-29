@@ -44,6 +44,12 @@
         .nav-link:hover .fa {
             transform: rotate(360deg)
         }
+        .hasil{
+            margin-top:15px;
+            padding: 25px;
+            border-radius:15px;
+            background-color:white;
+        }
     </style>
 </head>
 <body>
@@ -91,9 +97,110 @@
                 <hr style="margin-top:25px;">
             </div>
             <div class="col-md-12">
-                <table class="table table-hover">
-                ...
-                </table>
+                <form action="" method="post" class="kirim row g-3">
+                    <div class="col-md-4">
+                        <label for="formGroupExampleInput" class="form-label">Origin Shipment</label>
+                        <input type="text" class="form-control form-control-sm" name="asal[]" id="formGroupExampleInput" placeholder="Origin">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="formGroupExampleInput" class="form-label">Destination Shipment</label>
+                        <input type="text" class="form-control form-control-sm" name="tujuan[]" id="formGroupExampleInput" placeholder="Destination">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="formGroupExampleInput" class="form-label">Berat barang (gram)</label>
+                        <input type="number" class="form-control form-control-sm" name="berat[]" id="formGroupExampleInput" placeholder="eg. 100">
+                    </div>
+                    <hr style="margin-top:25px;">
+                    <div class="col-md-4">
+                        <input type="submit" class="btn btn-primary" name="cek" value="Cek Tarif" style="width:100%;"><br><br>
+                    </div>
+                </form>
+            </div>
+        </div>
+                <!-- foreach($asal1 as $key => $val){
+                    echo "Asal Kota = ".$asal1[$key]."<br>";
+                    echo "Tujuan Kota = ".$tujuan1[$key]."<br>";
+                    echo "Berat barang = ".$berat1[$key]."<br>";
+                }
+                if($berat1<=200){
+                    echo "10.000";
+                }else if($berat1 > 200){
+                    echo "15.000";
+                }else{
+                    echo "20.000";
+                }
+            } -->
+        <div class="col-md-12">
+            <div class="hasil">
+                <div class="table-responsive-sm">
+                    <h5>Harga Tarif</h5>
+                    <hr style="margin-top:25px;">
+                    <table class="table table-hover">
+                        <tbody>
+                            <?php
+                            if (isset($_POST['cek'])){
+
+                            $asal = $_POST['asal'];
+                            $tujuan = $_POST['tujuan'];
+                            $berat = $_POST['berat'];
+                                foreach($asal as $key => $val){
+                                    echo "<tr>";
+                                    echo "<td>Origin Shipment</td>";
+                                    echo "<td>".$asal[$key]."</td>";
+                                    echo "</tr>";
+
+                                    echo "<tr>";
+                                    echo "<td>Destination Shipment</td>";
+                                    echo "<td>".$tujuan[$key]."</td>";
+                                    echo "</tr>";
+
+                                    echo "<tr>";
+                                    echo "<td>Berat Barang</td>";
+                                    echo "<td>".$berat[$key]." Gram </td>";
+                                    echo "</tr>";
+                                };
+                            if($berat <= 200){
+                                    echo "<tr>";
+                                    echo "<td>Harga Tarif</td>";
+                                    echo "<td>Rp 12.000</td>";
+                                    echo "</tr>";
+                            }else if($berat > 200 && $berat <= 1000){
+                                    echo "<tr>";
+                                    echo "<td>Harga Tarif</td>";
+                                    echo "<td>Rp 16.000</td>";
+                                    echo "</tr>";                                
+                            }else if($berat > 1000 && $berat <= 2500){
+                                    echo "<tr>";
+                                    echo "<td>Harga Tarif</td>";
+                                    echo "<td>Rp 20.000</td>";
+                                    echo "</tr>";                                
+                            }else if($berat > 5000 && $berat <= 10000){
+                                    echo "<tr>";
+                                    echo "<td>Harga Tarif</td>";
+                                    echo "<td>Rp 24.000</td>";
+                                    echo "</tr>";                                
+                            }else if($berat > 10000 && $berat <= 15000){
+                                    echo "<tr>";
+                                    echo "<td>Harga Tarif</td>";
+                                    echo "<td>Rp 28.000</td>";
+                                    echo "</tr>";                                
+                            }else if($berat > 15000 && $berat <= 20000){
+                                    echo "<tr>";
+                                    echo "<td>Harga Tarif</td>";
+                                    echo "<td>Rp 32.000</td>";
+                                    echo "</tr>";                                
+                            }
+                            else{
+                                    echo "<tr>";
+                                    echo "<td>Harga Tarif</td>";
+                                    echo "<td>Rp 45.000</td>";
+                                    echo "</tr>";
+                            }
+                            }
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </main>

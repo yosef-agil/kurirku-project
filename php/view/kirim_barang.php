@@ -117,8 +117,9 @@
                         </div>
                         <div class="col-md-6">
                             <label for="formGroupExampleInput" class="form-label">Berat barang</label>
-                            <select class="form-select form-select-sm" aria-label="Default select example" name="beratBarang" id="formGroupExampleInput">  
-                                <option value="1000">100-1000gram</option>
+                            <select class="form-select form-select-sm" aria-label="Default select example" name="beratBarang" id="formGroupExampleInput">
+                                <option value="100">100-200gram</option>  
+                                <option value="1000">200-1000gram</option>
                                 <option value="2500">1000-2500gram</option>
                                 <option value="5000">2500-5000gram</option>
                                 <option value="10000">5000-10000gram</option>

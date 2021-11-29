@@ -1,17 +1,18 @@
 <?php
 
-    //hubungkan dengan file data.php
-    include ("../model/data.php");
-    require_once("../connection/auth.php");
+//hubungkan dengan file data.php
+include("../model/data.php");
+require_once("../connection/auth.php");
 
-    //new Object
-    $DT= new theData();
-    $dataKirim= $DT->tampil_table();
-    $no=1;
-    
+//new Object
+$DT = new theData();
+$dataKirim = $DT->tampil_table();
+$no = 1;
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,21 +24,25 @@
     <title>Dashboard | Admin</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
         body {
             background-color: #eee;
             font-family: 'Inter', sans-serif;
         }
-        header{
+
+        header {
             position: fixed;
             z-index: 1;
             top: 0;
             left: 0;
             overflow-x: hidden;
         }
-        main{
+
+        main {
             margin-left: 260px;
-            padding:30px 30px;
+            padding: 30px 30px;
         }
+
         .nav-link:hover {
             background-color: #525252 !important
         }
@@ -49,32 +54,34 @@
         .nav-link:hover .fa {
             transform: rotate(360deg)
         }
-        td{
-            font-size:14px;
+
+        td {
+            font-size: 14px;
         }
     </style>
 </head>
+
 <body>
-    
+
     <header>
         <div class="sidebar-menu">
             <!-- side bar menu -->
-            <div class="d-flex flex-column vh-100 flex-shrink-0 p-3 text-white bg-dark" style="width: 250px;"> 
-            <a href="/" style="margin-left:16px;" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none fs-4"> 
-                Kurir<span class="fs-4" style="color:#75CB79;">.ku</span> </a>
+            <div class="d-flex flex-column vh-100 flex-shrink-0 p-3 text-white bg-dark" style="width: 250px;">
+                <a href="/" style="margin-left:16px;" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none fs-4">
+                    Kurir<span class="fs-4" style="color:#75CB79;">.ku</span> </a>
                 <hr>
                 <ul class="nav nav-pills flex-column mb-auto">
                     <li class="nav-item"> <a href="#" class="nav-link active" aria-current="page">Dashboard</a> </li>
                     <li> <a href="ADMIN_data_penerima.php" class="nav-link text-white">Data Penerima</a> </li>
                     <li> <a href="ADMIN_data_pengirim.php" class="nav-link text-white">Data Pengirim</a> </li>
-                    <li> <a href="#" class="nav-link text-white">Report</a> </li>
+                    <li> <a href="ADMIN_report.php" class="nav-link text-white">Report</a> </li>
                 </ul>
                 <hr>
                 <div class="dropdown">
 
-                    <a style="font-size:14px;" href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false"> 
-                        <img src="https://simg.nicepng.com/png/small/128-1280406_view-user-icon-png-user-circle-icon-png.png" alt="" width="28" height="28" class="rounded-circle me-2"> 
-                        <?php echo  $_SESSION["user"]["f_name"]." ".$_SESSION["user"]["l_name"]; ?>
+                    <a style="font-size:14px;" href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://simg.nicepng.com/png/small/128-1280406_view-user-icon-png-user-circle-icon-png.png" alt="" width="28" height="28" class="rounded-circle me-2">
+                        <?php echo  $_SESSION["user"]["f_name"] . " " . $_SESSION["user"]["l_name"]; ?>
                     </a>
 
                     <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
@@ -90,7 +97,7 @@
         </div>
     </header>
 
-        <main>
+    <main>
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
@@ -104,7 +111,7 @@
                 </div>
                 <hr style="margin-top:25px;">
             </div>
-            
+
             <div class="col-md-12">
                 <div class="table-responsive-sm">
                     <table class="table table-hover align-middle">
@@ -122,33 +129,34 @@
                             </tr>
                         </thead>
                         <tbody>
-                        <?php
-                            foreach ($dataKirim as $key){
-                            echo "<tr class='data-table'>
-                                <td>".$no."</td>
-                                <td>".$key['no_resi']."</td>
-                                <td>".$key['tanggal_kirim']."</td>
-                                <td>".$key['estimasi_terima']."</td>
-                                <td>".$key['id_pengirim']."</td>
-                                <td>".$key['id_barang']."</td>
-                                <td>".$key['id_penerima']."</td>
-                                <td>".$key['id_pembayaran']."</td>
+                            <?php
+                            foreach ($dataKirim as $key) {
+                                echo "<tr class='data-table'>
+                                <td>" . $no . "</td>
+                                <td>" . $key['no_resi'] . "</td>
+                                <td>" . $key['tanggal_kirim'] . "</td>
+                                <td>" . $key['estimasi_terima'] . "</td>
+                                <td>" . $key['id_pengirim'] . "</td>
+                                <td>" . $key['id_barang'] . "</td>
+                                <td>" . $key['id_penerima'] . "</td>
+                                <td>" . $key['id_pembayaran'] . "</td>
                                 <td><a href='#' class='btn btn-success btn-sm'>On Process</a>
                                     <a href='#' class='btn btn-primary btn-sm'>Lihat Data</a>
                                     <a href='lihat_data.php' class='btn btn-secondary btn-sm'>Edit Data</a></td>";
-                            $no++;
+                                $no++;
                             };
-                        ?>
+                            ?>
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
-        </main>
+    </main>
 
 
     <script src="../js/sidebar.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 </body>
+
 </html>
