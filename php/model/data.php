@@ -66,13 +66,19 @@
             else return false;
         }
 
+        public $ongkir;
         //method menghitung total depends berat barang
         public function ongkir($a){
             $query=$this->db->prepare("SELECT * FROM 'tb_barang' WHERE berat_barang=:beratBarang");
-
             $query->bindParam(":beratBarang", $a);
         }
 
+        //Method cek tarif
+        public $asal;
+        public $tujuan;
+        public function cek($a, $b, $c){
+
+        }
 
         //Method tampil data penerima
         public function tampil_penerima()
